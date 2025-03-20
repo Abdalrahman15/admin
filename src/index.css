@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 50px;
+    padding: 8px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #25b09b;
+    --_m: 
+      conic-gradient(#0000 10%,#000),
+      linear-gradient(#000 0 0) content-box;
+    -webkit-mask: var(--_m);
+            mask: var(--_m);
+    -webkit-mask-composite: source-out;
+            mask-composite: subtract;
+    animation: l3 1s infinite linear;
+  }
+  @keyframes l3 {to{transform: rotate(1turn)}}
+
+
+  /* HTML: <div class="loader"></div> */
+.loaderx {
+        width: 50px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        border: 8px solid;
+        border-color: #000 #0000;
+        animation: l1 1s infinite;
+      }
+      @keyframes l1 {to{transform: rotate(.5turn)}}
+
+
+      .home-header {
+        background-image: url("./assets/images/xxd.jpg"); 
+        background-size: cover; 
+        background-position: center;
+        background-repeat: no-repeat; 
+        height: 100vh; 
+        width: 100%; 
+      }
+
+
+      .dumble-animation {
+        transition-property: transform;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 500ms;
+    }
+
+    .bolt-animation-dad {
+      perspective: 1000px; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .bolt-animation {
+      transform: rotateY(0deg);
+      transition: transform 700ms ease-in-out; 
+    }
+    
+    .bolt-3d {
+      transform-style: preserve-3d; 
+    }
+
+    .bolt-animation:hover {
+      transform: rotateY(360deg);
+    }
+
+    @layer utilities {
+      @keyframes shake {
+        0% { transform: translateX(0); }
+        25% { transform: translateX(-2px); }
+        50% { transform: translateX(2px); }
+        75% { transform: translateX(-2px); }
+        100% { transform: translateX(0); }
+      }
+    
+      .hover-shake:hover {
+        animation: shake 0.3s ease-in-out;
+      }
+    }
