@@ -87,6 +87,9 @@ export default function Navbar() {
         <li className='bg-black'>
           <NavLink to="settings" className="block py-2 px-3 text-white rounded-sm aria-[current=page]:bg-yellow-600 md:p-0  md:aria-[current=page]:bg-transparent md:aria-[current=page]:text-yellow-600 " onClick={()=>setToggle(true)}>Settings</NavLink>
         </li>
+        <li className='bg-black'>
+          <NavLink to="meals" className="block py-2 px-3 text-white rounded-sm aria-[current=page]:bg-yellow-600 md:p-0  md:aria-[current=page]:bg-transparent md:aria-[current=page]:text-yellow-600 " onClick={()=>setToggle(true)}>MealPlan</NavLink>
+        </li>
         
 
 
