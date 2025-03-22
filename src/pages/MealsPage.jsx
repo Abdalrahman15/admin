@@ -90,12 +90,12 @@ export default function MealsPage() {
               </select>
             </div>
           ) : (
-            <div className="empty-state">
+            <div className="empty-state mt-[100px] flex flex-col justify-content-center items-center">
               <i className="fas fa-utensils"></i>
-              <h2>No Meal Plans Yet</h2>
-              <p>Create your first meal plan to start tracking your nutrition</p>
+              <h2 className='text-center'>No Meal Plans Yet</h2>
+              <p className='text-center'>Create your first meal plan to start tracking your nutrition</p>
               <button 
-                className="btn btn-primary" 
+                className=" mt-5 container text-white bg-black hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center" 
                 onClick={handleCreateMealPlan}
               >
                 Create Meal Plan

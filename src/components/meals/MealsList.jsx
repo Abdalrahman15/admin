@@ -146,7 +146,7 @@ export default function MealsList({ activePlanId, isLoading }) {
     
       if (isLoading || loading) {
         return (
-          <div className="loading-container">
+          <div className="loading-container flex justify-center items-center mt-[200px]">
             <div className="spinner"></div>
             <p>Loading meals...</p>
           </div>

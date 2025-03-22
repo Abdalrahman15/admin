@@ -231,7 +231,7 @@ export default function MealForm({ isNewPlan, planId: propPlanId }) {
   
     if (loading) {
       return (
-        <div className="loading-container">
+        <div className="loading-container mt-[50px]">
           <div className="spinner"></div>
           <p>Loading...</p>
         </div>
@@ -242,12 +242,12 @@ export default function MealForm({ isNewPlan, planId: propPlanId }) {
     if (isNewPlan || (!mealId && paramPlanId)) {
       // Render meal plan form
       return (
-        <div className="form-container">
-          <h2>{isNewPlan ? 'Create New Meal Plan' : 'Edit Meal Plan'}</h2>
-          
-          <form onSubmit={handlePlanSubmit} className="meal-plan-form">
-            <div className="form-group">
-              <label htmlFor="name">Plan Name*</label>
+        <div className=" flex-col justify-content-center items-center mx-auto mt-7">
+          <h2 className='text-center'>{isNewPlan ? 'Create New Meal Plan' : 'Edit Meal Plan'}</h2>
+          <div className=''>
+          <form onSubmit={handlePlanSubmit} className="max-w-sm mx-auto mt-7">
+            <div className="flex gap-5 justify-center items-center">
+              <label htmlFor="name" className='text-nowrap'>Plan Name :</label>
               <input
                 type="text"
                 id="name"
@@ -255,23 +255,25 @@ export default function MealForm({ isNewPlan, planId: propPlanId }) {
                 value={planForm.name}
                 onChange={handlePlanChange}
                 required
+                className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 w-1/2'
               />
             </div>
   
             <div className="form-group">
-              <label htmlFor="description">Description</label>
+              <label htmlFor="description">Description: </label>
               <textarea
                 id="description"
                 name="description"
                 value={planForm.description}
                 onChange={handlePlanChange}
                 rows="3"
+                className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 w-1/2'
               />
             </div>
   
             <div className="form-row">
               <div className="form-group">
-                <label htmlFor="startDate">Start Date*</label>
+                <label htmlFor="startDate">Start Date: </label>
                 <input
                   type="date"
                   id="startDate"
@@ -279,28 +281,31 @@ export default function MealForm({ isNewPlan, planId: propPlanId }) {
                   value={planForm.startDate}
                   onChange={handlePlanChange}
                   required
+                  className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 w-1/2'
                 />
               </div>
               
               <div className="form-group">
-                <label htmlFor="endDate">End Date</label>
+                <label htmlFor="endDate">End Date: </label>
                 <input
                   type="date"
                   id="endDate"
                   name="endDate"
                   value={planForm.endDate}
                   onChange={handlePlanChange}
+                  className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 w-1/2'
                 />
               </div>
             </div>
   
             <div className="form-group">
-              <label htmlFor="dietType">Diet Type</label>
+              <label htmlFor="dietType">Diet Type: </label>
               <select
                 id="dietType"
                 name="dietType"
                 value={planForm.dietType}
                 onChange={handlePlanChange}
+                className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 w-1/2'
               >
                 <option value="">Select Diet Type</option>
                 <option value="Standard">Standard</option>
@@ -324,6 +329,7 @@ export default function MealForm({ isNewPlan, planId: propPlanId }) {
                 onChange={handlePlanChange}
                 min="0"
                 max="10000"
+                className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 w-1/2'
               />
             </div>
   
@@ -338,6 +344,7 @@ export default function MealForm({ isNewPlan, planId: propPlanId }) {
                   onChange={handlePlanChange}
                   min="0"
                   max="1000"
+                  className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 w-1/2'
                 />
               </div>
               
@@ -351,6 +358,7 @@ export default function MealForm({ isNewPlan, planId: propPlanId }) {
                   onChange={handlePlanChange}
                   min="0"
                   max="1000"
+                  className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 w-1/2'
                 />
               </div>
               
@@ -364,6 +372,7 @@ export default function MealForm({ isNewPlan, planId: propPlanId }) {
                   onChange={handlePlanChange}
                   min="0"
                   max="1000"
+                  className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 w-1/2'
                 />
               </div>
             </div>
@@ -375,32 +384,36 @@ export default function MealForm({ isNewPlan, planId: propPlanId }) {
                 name="isPublic"
                 checked={planForm.isPublic}
                 onChange={handlePlanChange}
+                className="m-5"
               />
-              <label htmlFor="isPublic">Make this plan public</label>
+              <label htmlFor="isPublic">Make this plan public?</label>
             </div>
   
-            <div className="form-actions">
+            <div className="">
               <button 
                 type="button" 
-                className="btn btn-secondary"
+                className="me-1 mb-5 form-actions text-white bg-black hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
                 onClick={() => navigate('/meals')}
               >
-                Cancel
+                Cancel creation
               </button>
               <button 
                 type="submit" 
-                className="btn btn-primary"
+                className="mb-5 form-actions text-white bg-black hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
                 disabled={submitting}
               >
-                {submitting ? 'Saving...' : (isNewPlan ? 'Create Plan' : 'Update Plan')}
+                {submitting ? 'Saving...' : (isNewPlan ? 'Create Plan ' : 'Update Plan')}
               </button>
             </div>
           </form>
+
+          </div>
+          
         </div>
       );
     }
   return<>
-   <div className="form-container mt-[100px]">
+   <div className=" mt-[70px] flex flex-col justify-center items-center">
         <h2>{mealId ? 'Edit Meal' : 'Add New Meal'}</h2>
         
         {showFoodSearch ? (
@@ -417,7 +430,7 @@ export default function MealForm({ isNewPlan, planId: propPlanId }) {
             <FoodSearch onSelectFood={handleAddFood} />
           </div>
         ) : (
-          <form onSubmit={handleMealSubmit} className="meal-form">
+          <form onSubmit={handleMealSubmit} className="meal-form max-w-sm mx-auto mt-7">
             <div className="form-group">
               <label htmlFor="name">Meal Name*</label>
               <input
@@ -427,6 +440,7 @@ export default function MealForm({ isNewPlan, planId: propPlanId }) {
                 value={mealForm.name}
                 onChange={handleMealChange}
                 required
+                className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 w-1/2'
               />
             </div>
   
@@ -438,6 +452,7 @@ export default function MealForm({ isNewPlan, planId: propPlanId }) {
                   name="type"
                   value={mealForm.type}
                   onChange={handleMealChange}
+                  className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 w-1/2'
                 >
                   <option value="Breakfast">Breakfast</option>
                   <option value="Lunch">Lunch</option>
@@ -457,6 +472,7 @@ export default function MealForm({ isNewPlan, planId: propPlanId }) {
                   name="scheduleTime"
                   value={mealForm.scheduleTime}
                   onChange={handleMealChange}
+                  className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 w-1/2'
                 />
               </div>
             </div>
@@ -469,6 +485,7 @@ export default function MealForm({ isNewPlan, planId: propPlanId }) {
                 value={mealForm.notes}
                 onChange={handleMealChange}
                 rows="2"
+                className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 w-1/2'
               />
             </div>
   
@@ -481,6 +498,7 @@ export default function MealForm({ isNewPlan, planId: propPlanId }) {
                 value={mealForm.imageUrl}
                 onChange={handleMealChange}
                 placeholder="https://example.com/image.jpg"
+                className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 w-1/2'
               />
             </div>
   
@@ -572,14 +590,14 @@ export default function MealForm({ isNewPlan, planId: propPlanId }) {
             <div className="form-actions">
               <button 
                 type="button" 
-                className="btn btn-secondary"
+                className="btn btn-secondary me-1 mb-5 form-actions text-white bg-black hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
                 onClick={() => navigate(mealId ? `/meals/${mealId}` : '/meals')}
               >
-                Cancel
+                Cancel meal 
               </button>
               <button 
                 type="submit" 
-                className="btn btn-primary"
+                className="btn btn-primary me-1 mb-5 form-actions text-white bg-black hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
                 disabled={submitting}
               >
                 {submitting ? 'Saving...' : (mealId ? 'Update Meal' : 'Add Meal')}
